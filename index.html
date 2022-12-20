@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/candado.png" type="image/x-icon">
+    <script type="text/javascript" src="main.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Encriptador de texto</title>
+</head>
+<body>
+    <div class="containerMain">
+        
+        <header>
+
+            <img src="img/logoAlura.png" alt="Alura" class="logo">
+
+        </header>
+        <div class="container">
+            
+            <div class="contenedorTexto">
+
+                <textarea id="textArea" class="textArea" onclick="limpia(this)" onblur="verifica(this)">Ingresa el texto...</textarea>
+
+            </div>
+
+            <div class="resultado" align="center">
+
+                <label class="mensajeP" id="mensajeP">Ningún mensaje fue encontrado</label>
+                <br><br><br>
+                <label class="mensajeS" id="mensajeS"></label>
+                <img id="imgBuscar" src="img/buscar.png" class="imgBuscar">
+
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="botones" align="center">
+                <p class="alerta">Solo introduce texto en minúsculas y sin acentos o caracteres especiales</p>
+                <button class="boton" id="boton">Encriptar</button>
+                <button class="botonD" id="botonD">Desencriptar</button>
+            </div>
+
+            <div class="Copiar"  align="center">
+                <button id="btnCopiar" class="btnCopiar" onclick="copiar('mensajeP')">Copiar</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="footer" align="center">
+                <p class="nombre">Hecho por BrianTexDev</p>
+                <a href="https://www.linkedin.com/in/brian-texon-b0667a258/">Linkedin<img src="img/linkedin.png" alt="" class="linkedin"></a>
+                <a href="https://github.com/BrianTex">Github<img src="img/github.png" alt="" class="github"> </a>
+                <P class="nombre">Reto Alura</P>
+            </div>
+        </div>  
+    </div>
+</body>
+<script>
+    var btn=document.querySelector("#boton");
+    btn.onclick=encriptar;
+
+    var btnDes=document.querySelector("#botonD");
+    btnDes.onclick=desencriptar;
+</script>
+
+</html>
