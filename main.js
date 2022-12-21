@@ -1,15 +1,3 @@
-function limpia(elemento){
-    if(elemento.value=="Ingresa el texto..."){
-        elemento.value="";
-    }
-}
-
-function verifica(elemento){
-    if(elemento.value==""){
-        elemento.value="Ingresa el texto...";
-    }
-}
-
 function encriptar(){
     document.getElementById("mensajeS").innerHTML="";
     var mensaje=document.getElementById("textArea").value.toLowerCase();
@@ -22,9 +10,25 @@ function encriptar(){
     var imgB=document.getElementById("imgBuscar");
     imgB.src="";
 }
-
+function verificarE(){
+    var mensaje=document.querySelector("#textArea");
+    if(mensaje.value==""){
+        alert("ingresa el texto");
+    }
+    else{
+        encriptar();
+    }
+}
+function verificarD(){
+    var mensaje=document.querySelector("#textArea");
+    if(mensaje.value==""){
+        alert("ingresa el texto");
+    }
+    else{
+        desencriptar();
+    }
+}
 function desencriptar(){
-    document.getElementById("mensajeS").innerHTML="";
     var mensaje=document.getElementById("textArea").value.toLowerCase();
     var mensajeEncriptado= mensaje.replace(/enter/img,"e");
     var mensajeEncriptado= mensajeEncriptado.replace(/imes/img,"i");
@@ -33,6 +37,7 @@ function desencriptar(){
     var mensajeEncriptado= mensajeEncriptado.replace(/ufat/img,"u");
     document.getElementById("mensajeP").innerHTML=mensajeEncriptado;
     var imgB=document.getElementById("imgBuscar");
+    document.getElementById("mensajeS").innerHTML="";
     imgB.src="";
 }
 function copiar(id_elemento){

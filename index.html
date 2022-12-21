@@ -20,7 +20,7 @@
             
             <div class="contenedorTexto">
 
-                <textarea id="textArea" class="textArea" onclick="limpia(this)" onblur="verifica(this)">Ingresa el texto...</textarea>
+                <textarea id="textArea" class="textArea" placeholder="Ingresa el texto aqui"></textarea>
 
             </div>
 
@@ -36,7 +36,7 @@
         <div class="container">
 
             <div class="botones" align="center">
-                <p class="alerta">Solo introduce texto en minúsculas y sin acentos o caracteres especiales</p>
+                <p class="alerta">Solo introduce texto sin acentos o caracteres especiales</p>
                 <button class="boton" id="boton">Encriptar</button>
                 <button class="botonD" id="botonD">Desencriptar</button>
             </div>
@@ -57,11 +57,12 @@
     </div>
 </body>
 <script>
+
     var btn=document.querySelector("#boton");
-    btn.onclick=encriptar;
+    btn.onclick=verificarE;
 
     var btnDes=document.querySelector("#botonD");
-    btnDes.onclick=desencriptar;
+    btnDes.onclick=verificarD;
 </script>
 
 </html>
