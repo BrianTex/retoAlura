@@ -1,3 +1,4 @@
+var caracteresEspeciales=["á","Á","é","É","í","Í","ó","Ó","ú","Ú","ï","Ï","ü","Ü","!","¡","¿","?"];
 function encriptar(){
     document.getElementById("mensajeS").innerHTML="";
     var mensaje=document.getElementById("textArea").value.toLowerCase();
@@ -16,7 +17,18 @@ function verificarE(){
         alert("ingresa el texto");
     }
     else{
-        encriptar();
+        var bandera=0;
+        for(var i=0;bandera==0;i++){
+            if(mensaje.value==caracteresEspeciales[i]){
+                bandera=1;
+            }
+        }
+        if(bandera==1){
+            alert("no se permiten caracteres especiales");
+        }
+        else{
+            encriptar();   
+        }
     }
 }
 function verificarD(){
@@ -25,7 +37,18 @@ function verificarD(){
         alert("ingresa el texto");
     }
     else{
-        desencriptar();
+        var bandera=0;
+        for(var i=0;bandera==0;i++){
+            if(mensaje.value==caracteresEspeciales[i]){
+                bandera=1;
+            }
+        }
+        if(bandera==1){
+            alert("no se permiten caracteres especiales");
+        }
+        else{
+            desencriptar();
+        }
     }
 }
 function desencriptar(){
